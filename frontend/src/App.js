@@ -3,7 +3,7 @@ import UploadContent from "./components/UploadContent";
 import UploadedContentList from "./components/UploadedContentList";
 function App() {
   return (
-    <div className="App">
+    <div className="App container">
       {/* upload content */}
       <UploadContent />
       {/* uploaded content list */}

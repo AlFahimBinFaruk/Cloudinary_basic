@@ -13,7 +13,17 @@ const UploadContent = () => {
         formData
       )
         .then((res) => {
-          console.log("uploaded file info", res);
+          console.log("res",res.data)
+          const data = {
+            name: res.data.original_filename,
+            public_id: res.data.public_id,
+            url: res.data.url
+          }
+          Axios.post("http://localhost:8000/api/add", data).then((res) => {
+           alert("content uploaded")
+          }).catch((err) => {
+            alert(err);
+          });
         })
         .catch((err) => {
           alert(err);
